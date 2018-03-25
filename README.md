@@ -5,10 +5,11 @@ This is an  extension of the [Oracle official Weblogic docker project] (https://
 
 This Dockerfile extends the Oracle WebLogic image by installing the Supplemental package of WebLogic which includes the MedRec WLS sample and some additional changes to automate build and bring up of Oracle DB and Medrec through docker-compose
 
-clone this repo:
+Step 1: 
 git clone https://github.com/uday-shetty/docker-for-oracle-weblogic
 
-Before continuing, make sure you download the WebLogic Server 12.2.1.2 Supplemental Quick Installer from OTN [fmw_12.2.1.2.0_wls_supplemental_quick_Disk1_1of1.zip](http://www.oracle.com/technetwork/middleware/weblogic/downloads/wls-for-dev-1703574.html), and drop the zip file (without extracting it!) into folder 12212-oradb-medrec.
+Step 2: 
+download the WebLogic Server 12.2.1.2 Supplemental Quick Installer from OTN [fmw_12.2.1.2.0_wls_supplemental_quick_Disk1_1of1.zip](http://www.oracle.com/technetwork/middleware/weblogic/downloads/wls-for-dev-1703574.html), and drop the zip file (without extracting it!) into current folder
 
 Note: sqlcl is downloaded for convenience. Check Oracle Website for latest versions.
 Download (http://www.oracle.com/technetwork/developer-tools/sqlcl/downloads/index.html), and install sqlcl, a new command-line tool for connecting to the Oracle Database.
@@ -17,6 +18,7 @@ The Dockerfile uses Weblogic and Database images from Docker Store (https://stor
 
 Assumptions: Dockerfile and docker-compose is based on  default Database user/password for this demo.
 
+Step 3: 
 If there are changes to DB username/password, edit the *12212-oradb-medrec/container-scripts/oradatasource.properties*, set the Oracle Thin XA driver, the Database URL, username, password, and DB container name to connect to the Oracle Database container.
 
 ```
@@ -34,8 +36,10 @@ dstestquery=SELECT * FROM DUAL
 dsmaxcapacity=1
 ```
 
-Note: login to Docker Store/Hub before running docker-compose: 'docker login'
+Step 4:  
+Login to Docker Store/Hub before running docker-compose: 'docker login'
 
+Step 5:
 To build, run:
 
         $ docker-compose up -d
@@ -60,7 +64,7 @@ To bring up Weblogic console
 
 	http://localhost:7011/console   (weblogic/welcome1)
 
-To access the MedRec application, go to:
+To access the MedRec application
 
-        http://localhost:7011/medrec
+	http://localhost:7011/medrec
 
