@@ -3,6 +3,7 @@ version: '3.2'
 services:
   wls:
     build: .
+    container_name: wls-medrec
     ports:
       - 7011:7011
     depends_on:
