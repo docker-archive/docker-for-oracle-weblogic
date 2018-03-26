@@ -12,11 +12,14 @@
 # (1) fmw_12.2.1.2.0_wls_supplemental_quick_Disk1_1of1.zip
 #     Download the Developer Quick installer from http://www.oracle.com/technetwork/middleware/weblogic/downloads/wls-for-dev-1703574.html 
 #
+# (2) sqlcl-17.4.0.354.2224-no-jre.zip
+#     Download command-line tool for connecting to the Oracle Database from http://www.oracle.com/technetwork/developer-tools/sqlcl/downloads/index.html
+#
 # HOW TO BUILD THIS IMAGE
 # -----------------------
 # Put all downloaded files in the same directory as this Dockerfile
 # Run: 
-#      $ sudo docker build -t 12212-oradb-medrec .
+#      $ sudo docker-compose up -d 
 #
 
 # Pull base image
@@ -26,7 +29,8 @@ FROM store/oracle/weblogic:12.2.1.2
 
 # Maintainer
 # ----------
-MAINTAINER Monica Riccelli <monica.riccelli@oracle.com>
+#MAINTAINER Monica Riccelli <monica.riccelli@oracle.com>
+#MAINTAINER Uday Shetty
 
 # Environment variables required for this build (do NOT change)
 # -------------------------------------------------------------
