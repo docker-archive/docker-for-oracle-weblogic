@@ -9,16 +9,16 @@ Step 1:
 git clone https://github.com/uday-shetty/docker-for-oracle-weblogic
 
 Step 2: 
-download the WebLogic Server 12.2.1.2 Supplemental Quick Installer from OTN [fmw_12.2.1.2.0_wls_supplemental_quick_Disk1_1of1.zip](http://www.oracle.com/technetwork/middleware/weblogic/downloads/wls-for-dev-1703574.html), and drop the zip file (without extracting it!) into current folder
+Download the WebLogic Server 12.2.1.2 Supplemental Quick Installer from OTN [fmw_12.2.1.2.0_wls_supplemental_quick_Disk1_1of1.zip](http://www.oracle.com/technetwork/middleware/weblogic/downloads/wls-for-dev-1703574.html), and drop the zip file (without extracting it!) into current folder
 
-Note: sqlcl is downloaded for convenience. Check Oracle Website for latest versions.
-Download (http://www.oracle.com/technetwork/developer-tools/sqlcl/downloads/index.html), and install sqlcl, a new command-line tool for connecting to the Oracle Database.
+Step 3:
+Download command-line tool for connecting to the Oracle Database from OTN [sqlcl-17.4.0.354.2224-no-jre.zip](http://www.oracle.com/technetwork/developer-tools/sqlcl/downloads/index.html), and drop the zip file (without extracting it!) into current folder
 
 The Dockerfile uses Weblogic and Database images from Docker Store (https://store.docker.com)
 
 Assumptions: Dockerfile and docker-compose is based on  default Database user/password for this demo.
 
-Step 3: 
+Step 4: (optional)
 If there are changes to DB username/password, edit the *12212-oradb-medrec/container-scripts/oradatasource.properties*, set the Oracle Thin XA driver, the Database URL, username, password, and DB container name to connect to the Oracle Database container.
 
 ```
@@ -36,10 +36,10 @@ dstestquery=SELECT * FROM DUAL
 dsmaxcapacity=1
 ```
 
-Step 4:  
+Step 5:  
 Login to Docker Store/Hub before running docker-compose: 'docker login'
 
-Step 5:
+Step 6:
 To build, run:
 
         $ docker-compose up -d
