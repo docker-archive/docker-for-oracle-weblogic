@@ -7,21 +7,14 @@ services:
       - 7011:7011
     depends_on:
        - orcldb
-    networks:
-      - new
 
   orcldb:
     image: store/oracle/database-enterprise:12.2.0.1
-    networks:
-      - new
     ports:
       - 1521:1521
       - 5500:5500
     volumes:
       - db-oracle:/ORCL
-
-networks:
-  new:
 
 volumes:
   db-oracle:
