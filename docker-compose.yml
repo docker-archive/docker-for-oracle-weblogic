@@ -2,23 +2,26 @@ version: '3.2'
 
 services:
   wls:
-    build: .
-    container_name: wls-medrec
+    image: 1221-oradb-medrec:latest 
     ports:
       - 7011:7011
     depends_on:
-       - database
+       - orcldb
     networks:
       - new
 
-  database:
+  orcldb:
     image: store/oracle/database-enterprise:12.2.0.1
-    container_name: orcldb
     networks:
       - new
     ports:
       - 1521:1521
       - 5500:5500
+    volumes:
+      - db-oracle:/ORCL
 
 networks:
   new:
+
+volumes:
+  db-oracle:
