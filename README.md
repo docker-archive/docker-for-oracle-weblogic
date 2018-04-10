@@ -41,7 +41,8 @@ Login to Docker Store/Hub before running docker-compose: 'docker login'
 
 Step 6:
 To build:
-	$ ./build.sh
+
+        $ ./build.sh
 
 Step 7:
 To run:
@@ -49,7 +50,8 @@ To run:
         $ docker-compose up -d
 
         This brings up Oracle Database and Weblogic/Medrec. It takes ~5-6 mins for application to be ready as Weblogic will wait for Database to be ready. 
-	Note: A label has been added to the node above to identify the Oracle Database node. Proper functioning of the database requires 2-4 cpus, 8-16GB memory, and 12-16GB local storage.
+
+        Note: A label has been added to the node above to identify the Oracle Database node. Proper functioning of the database requires 2-4 cpus, 8-16GB memory, and 12-16GB local storage.
 
         Check logs for Weblogic Container 'docker logs -f <weblogic container-id>'
 
