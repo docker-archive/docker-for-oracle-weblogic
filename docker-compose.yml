@@ -2,7 +2,7 @@ version: '3.2'
 
 services:
   wls:
-    image: 1221-oradb-medrec:latest 
+    image: 1221-oradb-medrec:1.0
     ports:
       - 7011:7011
     depends_on:
@@ -13,6 +13,10 @@ services:
     ports:
       - 1521:1521
       - 5500:5500
+    deploy:
+      placement:
+        constraints:
+         - node.labels.db == oracle
     volumes:
       - db-oracle:/ORCL
 
