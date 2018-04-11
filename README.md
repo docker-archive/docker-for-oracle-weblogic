@@ -3,7 +3,12 @@ Example of Image with WLS Domain
 
 This is an  extension of the [Oracle official Weblogic docker project] (https://github.com/oracle/docker-images/OracleWeblogic).
 
-This Dockerfile extends the Oracle WebLogic image by installing the Supplemental package of WebLogic which includes the MedRec WLS sample and some additional changes to automate build and bring up of Oracle DB and Medrec through docker-compose
+This Dockerfile extends the Oracle WebLogic image by installing the Supplemental package of WebLogic which includes the MedRec WLS sample and some additional changes to automate build and populate Oracle DB 
+
+The docker-compose file provides an easy way to deploy and run Weblogic/Medrec and Oracle Database containers.
+
+How to build and run
+=====================
 
 Step 1: 
 git clone https://github.com/uday-shetty/docker-for-oracle-weblogic
