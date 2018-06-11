@@ -1,0 +1,72 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wls
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 7011
+  selector:
+    app: wls
+---
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: wls
+spec:
+  selector:
+    matchLabels:
+      app: wls
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: wls
+    spec:
+      containers:
+      - image: 1221-oradb-medrec:1.0
+        name: wls
+        ports:
+        - containerPort: 7011
+          name: wls
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orcldb
+spec:
+  ports:
+  - port: 1521
+    name: sqlnet
+  - port: 5500
+    name: oraclexml
+  selector:
+    app: orcldb
+---
+
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: orcldb
+spec:
+  selector:
+    matchLabels:
+      app: orcldb
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: orcldb
+    spec:
+      containers:
+      - image: store/oracle/database-enterprise:12.2.0.1
+        name: orcldb
+        ports:
+        - containerPort: 1521
+          name: sqlnet
+        - containerPort: 5500
+          name: oraclexml
+        nodeSelector:
+          db: oracle

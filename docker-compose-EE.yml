@@ -19,6 +19,9 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
+      placement:
+        constraints:
+         - node.labels.db == oracle
     volumes:
       - db-oracle:/ORCL
 
