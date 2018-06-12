@@ -2,7 +2,7 @@ version: '3.2'
 
 services:
   wls:
-    image: 1221-oradb-medrec:1.0
+    image: {dtr-registry-address}/1221-oradb-medrec:1.0
     ports:
       - 7011:7011
     depends_on:
@@ -12,7 +12,7 @@ services:
         condition: on-failure
 
   orcldb:
-    image: store/oracle/database-enterprise:12.2.0.1
+    image: {dtr-registry-address}/database-enterprise:12.2.0.1
     ports:
       - 1521:1521
       - 5500:5500
