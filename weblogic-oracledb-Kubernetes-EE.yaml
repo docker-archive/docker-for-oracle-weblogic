@@ -25,7 +25,7 @@ spec:
         app: wls
     spec:
       containers:
-      - image: 1221-oradb-medrec:1.0
+      - image: {dtr-registry-address}/1221-oradb-medrec:1.0
         name: wls
         ports:
         - containerPort: 7011
@@ -61,7 +61,7 @@ spec:
         app: orcldb
     spec:
       containers:
-      - image: store/oracle/database-enterprise:12.2.0.1
+      - image: {dtr-registry-address}/database-enterprise:12.2.0.1
         name: orcldb
         ports:
         - containerPort: 1521
