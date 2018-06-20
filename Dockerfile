@@ -30,7 +30,6 @@ FROM store/oracle/weblogic:12.2.1.2
 # Maintainer
 # ----------
 #MAINTAINER Monica Riccelli <monica.riccelli@oracle.com>
-#MAINTAINER Uday Shetty
 
 # Environment variables required for this build (do NOT change)
 # -------------------------------------------------------------
@@ -58,9 +57,10 @@ RUN cd /u01 && $JAVA_HOME/bin/jar xf /u01/$FMW_PKG && cd - && \
     rm /u01/$FMW_PKG /u01/$FMW_JAR
 
 USER root
-RUN yum -y install unzip
-RUN cd /u01/oracle/ && unzip sqlcl-17.4.0.354.2224-no-jre.zip
-RUN rm /u01/oracle/sqlcl-17.4.0.354.2224-no-jre.zip
+RUN yum -y install unzip \
+    && cd /u01/oracle/ \
+    && unzip sqlcl-17.4.0.354.2224-no-jre.zip \
+    && rm /u01/oracle/sqlcl-17.4.0.354.2224-no-jre.zip
 
 USER root 
 RUN chmod +xr /u01/oracle/wlserver/samples/server/*.sh
