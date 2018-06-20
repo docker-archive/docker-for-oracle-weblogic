@@ -2,9 +2,7 @@
 
 This guide illustrates how Docker Enterprise Edition (EE) is used to deploy Oracle Weblogic Server running the MedRec sample application with the Oracle Database.
 
-_The new Weblogic image created is an  extension of the [Oracle official Weblogic docker project] (https://github.com/oracle/docker-images/OracleWeblogic)._
-
-This Dockerfile extends the Oracle WebLogic image by installing the Supplemental package of WebLogic which includes the MedRec WLS sample and some additional changes to automate build and populate Oracle DB 
+This Dockerfile extends the Oracle WebLogic image _[Oracle official Weblogic docker project] (https://github.com/oracle/docker-images/OracleWeblogic)._ by installing the Supplemental package of WebLogic which includes the MedRec WLS sample and some additional changes to automate build and populate Oracle DB 
 
 The docker-compose file provides an easy way to deploy and run Weblogic/Medrec and Oracle Database containers.
 
