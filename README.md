@@ -36,7 +36,7 @@ The following diagram shows Oracle Weblogic, Oracle Database, and MedRec applica
   - [SQLcl 4.2](http://www.oracle.com/technetwork/developer-tools/sqlcl/downloads/index.html)
   - [Oracle WebLogic Server 12.2.1.2 Supplemental Quick Installer](http://www.oracle.com/technetwork/middleware/weblogic/downloads/wls-for-dev-1703574.html)
 
-## Installation and Configuration (Docker for Mac)
+## Installation and Configuration
 
 1. Install the Git utility if not already installed. In a terminal window, navigate to the folder you would like to place the repository (or create a new one), then run the command:
 
@@ -214,7 +214,7 @@ This section shows how to deploy a 4-node (non-HA) Oracle WebLogic stack using D
 
 > **Note:** A label has been added to the node in this digram to identify the Oracle Database node. Proper functioning of the database requires 2-4 CPUs, 8-16GB memory, and 12-16GB local storage.
 
-An example `docker-compose-EE.yml` is provided below which brings up the WebLogic console and launch the MedRec application. Details can be found at [MedRec applications on Weblogic with Oracle Database](https://github.com/docker/docker-for-oracle-weblogic).
+An example `docker-compose-EE.yml` is provided below which brings up the WebLogic console and launch the MedRec application. Details can be found at [MedRec applications on Weblogic with Oracle Database](https://docs.oracle.com/cd/E13222_01/wls/docs81/medrec_tutorials/overview.html).
 
 `Before proceeding with the `docker-compose` deployment, move the `1221-oradb-medrec` image to an internally accessible Docker Trusted Registry using `docker tag` and `docker push` commands. The address of the registry will be entered into the `docker-compose-EE.yml` at `{dtr-registry-address}`.
 
