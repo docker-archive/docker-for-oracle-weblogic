@@ -33,7 +33,7 @@ The following diagram shows Oracle Weblogic, Oracle Database, and MedRec applica
 - Oracle
   - [WebLogic: 12.2.1.2](https://store.docker.com/images/oracle-weblogic-server-12c)
   - [Oracle Database Enterprise Edition: 12.2.0.1](https://store.docker.com/images/oracle-database-enterprise-edition)
-  - [SQLcl 4.2](http://www.oracle.com/technetwork/developer-tools/sqlcl/downloads/index.html)
+  - [SQLcl 4.2](http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/sqldev-downloads-174-4412007.html)
   - [Oracle WebLogic Server 12.2.1.2 Supplemental Quick Installer](http://www.oracle.com/technetwork/middleware/weblogic/downloads/wls-for-dev-1703574.html)
 
 ## Installation and Configuration
@@ -45,7 +45,7 @@ The following diagram shows Oracle Weblogic, Oracle Database, and MedRec applica
     ```
 2. Download the [Oracle WebLogic Server 12.2.1.2 Supplemental Quick Installer](http://www.oracle.com/technetwork/middleware/weblogic/downloads/wls-for-dev-1703574.html) (`fmw_12.2.1.2.0_wls_supplemental_quick_Disk1_1of1.zip`), and place the zip file (without extracting it) into current folder.
 
-3. Download the [Oracle SQL Developer command-line (SQLcl) tool](http://www.oracle.com/technetwork/developer-tools/sqlcl/downloads/sqlcl-relnotes-181-4428006.html) (`sqlcl-17.4.0.354.2224-no-jre.zip`), and place the zip file (without extracting it!) into current folder.
+3. Download the [Oracle SQL Developer command-line (SQLcl) tool](http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/sqldev-downloads-174-4412007.html) (`sqlcl-17.4.0.354.2224-no-jre.zip`), and place the zip file (without extracting it!) into current folder.
 
 4. The Dockerfile uses the Weblogic and Database images from [Docker Store](https://store.docker.com). No modifications are necessary.
 
@@ -78,6 +78,12 @@ The following diagram shows Oracle Weblogic, Oracle Database, and MedRec applica
 
     ```docker
     $ ./build.sh
+    ```
+
+3. Re-tag the image to version
+
+    ```docker
+    $ docker tag 1221-oradb-medrec:latest 1221-oradb-medrec:1.0
     ```
 
 ## Verifying the Deployment for Swarm on Docker for Mac
